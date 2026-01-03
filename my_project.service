@@ -1,0 +1,16 @@
+# This file should be saved here: /etc/systemd/system/THIS_FILE
+
+[Unit]
+Description=My Python Project
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/eddyfraga/Projects/AtmosphericSensing
+ExecStart=/home/eddyfraga/Projects/AtmosphericSensing/start.sh
+Restart=always
+User=eddyfraga
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
