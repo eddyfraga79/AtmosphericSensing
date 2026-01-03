@@ -5,7 +5,7 @@
 set -e
 
 # Go to script's directory
-cd "$(/home/eddyfraga/Projects/AtmosphericSensing "$0")"
+cd "$(~/Projects/AtmosphericSensing "$0")"
 
 # Name of your virtual environment folder
 VENV_DIR=".venv"
