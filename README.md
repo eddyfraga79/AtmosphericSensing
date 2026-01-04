@@ -10,6 +10,8 @@
     * Created a free account with _HIVEMQ_ for this project. Good enough for low data throughput projects with very little IoT devices.
 * FlowFuse : https://flowfuse.com/
     * Created a free account with _FlowFuse_ for this project. Connects to the MQTT broker and allows for data visualization.
+    * See image below for reference of Node-RED configurations:
+      <img width="1119" height="486" alt="image" src="https://github.com/user-attachments/assets/42ab2f72-822e-4635-a8c2-806f3bcbd707" />
 * Raspberry Pi Zero 2 W : https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/
     * Low powered SBC, equipped with WiFi allowing for networking capabilities and interfacing with various devices trhough GPIOs, I2C and SPI buses 
 * SCD4x sensor : https://sensirion.com/media/documents/48C4B7FB/64C134E7/Sensirion_SCD4x_Datasheet.pdf
