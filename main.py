@@ -1,8 +1,9 @@
 import time
 import os
+from dotenv import load_dotenv
 from hivemq import HiveMQ
 from scd4x import SCD40Sensor
-from dotenv import load_dotenv
+from database import SensorDatabase
 
 SENSOR_SAMPLE_TIME = 5
 
@@ -23,6 +24,9 @@ def main():
     # Load the environment file (.env)
     load_dotenv()
 
+    # Create a new or open database
+    db = SensorDatabase()
+
     # Create a display instance
     # display = LCD1602RGB()
 
@@ -39,9 +43,15 @@ def main():
     while True:
         data = sensor.read_data()
         if data != None :
+            # Send data to MQTT broker
             hivemq_client.send_payload_hivemq(str(os.getenv("HIVEMQ_TOPIC_TEMPERATURE")), data['temperature'], qos=1)
             hivemq_client.send_payload_hivemq(str(os.getenv("HIVEMQ_TOPIC_HUMIDITY")), data['humidity'], qos=1)
             hivemq_client.send_payload_hivemq(str(os.getenv("HIVEMQ_TOPIC_CO2")), data['co2'], qos=1)
+            
+            # Write new sensor data
+            db.write_reading(temperature=data['temperature'], humidity=data['humidity'], co2=data['co2'])
+
+            # Update display data
             # updateDisplayData(data['temperature'], data['humidity'], data['co2'])
 
         time.sleep(SENSOR_SAMPLE_TIME)
