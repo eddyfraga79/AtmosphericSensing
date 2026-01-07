@@ -54,7 +54,7 @@ class SCD40Sensor:
                 "temperature": round(self.scd4x.temperature, 2),
                 "humidity": round(self.scd4x.relative_humidity, 2)
             }
-            if self.verbose == True:
+            if self.verbose:
                 print(data)
             self._last_measurement = current_time
             return data
