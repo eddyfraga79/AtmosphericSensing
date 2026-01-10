@@ -21,11 +21,6 @@ def updateDisplayData(temperature, humidity, co2):
   display.print(f"CO2: {int(temperature)}PPM");
   display.set_cursor(2, 1)
 
-def generate_device_id():
-    mac = uuid.getnode()
-    mac_addr = ''.join(f'{(mac >> ele) & 0xff:02x}' for ele in range(40, -1, -8))
-    return str(os.getenv("HIVEMQ_TOPIC_DEVICES")) + mac_addr + "/status"
-
 def main():
 
     # Load the environment file (.env)
@@ -47,7 +42,7 @@ def main():
         str(os.getenv("HIVEMQ_USERNAME")), 
         str(os.getenv("HIVEMQ_PASSWORD")), 
         use_tls=True, 
-        lwt_topic=generate_device_id(),
+        lwt_topic=str(os.getenv("HIVEMQ_TOPIC_DEVICES")) + str(os.getenv("IOT_DEVICE_NAME")) + "/status",
         heartbeat_interval=DEVICE_MQTT_HEARTBEAT,
         verbose=False
         )
