@@ -1,5 +1,7 @@
+adafruit-blinka
 adafruit-circuitpython-scd4x==1.4.9
 circuitpython-waveshare-lcd1602==1.0.0
 paho-mqtt==2.1.0
 python-dotenv==1.2.1
 setuptools==80.9.0
+adafruit-circuitpython-bme680==3.7.14
