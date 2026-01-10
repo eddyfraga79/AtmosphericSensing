@@ -1,6 +1,6 @@
 import sqlite3
 from datetime import datetime
-from typing import List, Tuple, Optional
+from typing import List, Tuple
 
 class SensorDatabase:
     def __init__(self, db_name: str = "sensor_data.db"):
@@ -21,18 +21,19 @@ class SensorDatabase:
                     timestamp TEXT NOT NULL,
                     temperature REAL NOT NULL,
                     humidity REAL NOT NULL,
-                    co2 REAL NOT NULL
+                    co2 REAL,
+                    aqi REAL
                 );
             """)
             conn.commit()
 
-    def write_reading(self, temperature: float, humidity: float, co2: float):
+    def write_reading(self, temperature: float, humidity: float, co2: float = None, aqi: float = None):
         """Insert a new sensor reading into the database."""
         timestamp = datetime.now().isoformat(timespec="seconds")
         with self._connect() as conn:
             conn.execute(
-                "INSERT INTO readings (timestamp, temperature, humidity, co2) VALUES (?, ?, ?, ?)",
-                (timestamp, temperature, humidity, co2)
+                "INSERT INTO readings (timestamp, temperature, humidity, co2, aqi) VALUES (?, ?, ?, ?, ?)",
+                (timestamp, temperature, humidity, co2, aqi)
             )
             conn.commit()
 
@@ -45,7 +46,10 @@ class SensorDatabase:
     def read_latest(self, limit: int = 10) -> List[Tuple]:
         """Return the most recent N records."""
         with self._connect() as conn:
-            cursor = conn.execute("SELECT * FROM readings ORDER BY timestamp DESC LIMIT ?;", (limit,))
+            cursor = conn.execute(
+                "SELECT * FROM readings ORDER BY timestamp DESC LIMIT ?;", 
+                (limit,)
+            )
             return cursor.fetchall()
 
     def erase_database(self):
