@@ -13,16 +13,20 @@ class SCD40Sensor:
         Initialize the SCD40 sensor.
         :param measurement_interval: Minimum seconds between readings.
         """
-        self.i2c = board.I2C()  # Uses default I2C pins
-        print(self.i2c)
-        self.scd4x = adafruit_scd4x.SCD4X(self.i2c)
         self.measurement_interval = measurement_interval
         self._last_measurement = 0
         self.verbose = verbose
+        self.scd4x = None  # Will be set if sensor detected
 
-        # Start measurement mode
-        self.scd4x.start_periodic_measurement()
-        print("[SCD40] Sensor initialized and measuring...")
+        try:
+            self.i2c = board.I2C()  # Uses default I2C pins
+            # Attempt to initialize sensor
+            self.scd4x = adafruit_scd4x.SCD4X(self.i2c)
+            self.scd4x.start_periodic_measurement()
+            print("[SCD40] Sensor detected and initialized.")
+        except Exception as e:
+            print(f"[SCD40 ERROR] Sensor not detected or failed to initialize: {e}")
+            self.scd4x = None
 
     # ───────────────────────────────
     # Reading Methods
@@ -36,16 +40,22 @@ class SCD40Sensor:
             "temperature": 22.6,
             "humidity": 44.3
         }
-        Returns None if data not ready or on error.
+        Returns None if sensor missing, data not ready, or on error.
         """
+        if self.scd4x is None:
+            if self.verbose:
+                print("[SCD40 WARNING] No sensor detected. Cannot read data.")
+            return None
+
         current_time = time.time()
         if current_time - self._last_measurement < self.measurement_interval:
-            print(f"[SCD40 WARNING] Measurement sample delay too short")
-            # Avoid reading too frequently
+            if self.verbose:
+                print(f"[SCD40 WARNING] Measurement sample delay too short")
             return None
 
         if not self.scd4x.data_ready:
-            print(f"[SCD40 WARNING] Sensor measurement not ready")
+            if self.verbose:
+                print(f"[SCD40 WARNING] Sensor measurement not ready")
             return None
 
         try:
@@ -82,8 +92,20 @@ class SCD40Sensor:
     # ───────────────────────────────
     def stop_measurement(self):
         """Stop periodic measurement."""
+        if self.scd4x is None:
+            return
+
         try:
             self.scd4x.stop_periodic_measurement()
-            print("[SCD40] Measurement stopped.")
+            if self.verbose:
+                print("[SCD40] Measurement stopped.")
         except Exception as e:
             print(f"[SCD40 ERROR] Could not stop measurement: {e}")
+
+    # ───────────────────────────────
+    # New convenience property
+    # ───────────────────────────────
+    @property
+    def detected(self):
+        """Return True if the sensor was successfully initialized."""
+        return self.scd4x is not None
