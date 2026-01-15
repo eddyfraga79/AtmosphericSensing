@@ -92,10 +92,11 @@ def main():
 
     # Create a client instance
     hivemq_client = HiveMQ(
-        str(os.getenv("HIVEMQ_URL")), 
-        int(os.getenv("HIVEMQ_PORT")), 
-        str(os.getenv("HIVEMQ_USERNAME")), 
-        str(os.getenv("HIVEMQ_PASSWORD")), 
+        broker=str(os.getenv("HIVEMQ_URL")), 
+        port=int(os.getenv("HIVEMQ_PORT")), 
+        username=str(os.getenv("HIVEMQ_USERNAME")), 
+        password=str(os.getenv("HIVEMQ_PASSWORD")), 
+        client_id=str(os.getenv("IOT_DEVICE_NAME"))
         use_tls=True, 
         lwt_topic=str(os.getenv("HIVEMQ_TOPIC_DEVICES")) + str(os.getenv("IOT_DEVICE_NAME")) + "/status",
         heartbeat_interval=SYSTEM_HEARTBEAT,
