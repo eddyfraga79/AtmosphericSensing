@@ -43,22 +43,32 @@ def publish_sensor_data(hivemq_client, sensor_data):
     # Temperature
     temp = sensor_data.get("temperature")
     if temp is not None:
-        hivemq_client.send_payload_hivemq(str(os.getenv("HIVEMQ_TOPIC_TEMPERATURE")), temp, qos=0)
+        hivemq_client.send_payload_hivemq(
+            str(os.getenv("HIVEMQ_TOPIC_SENSOR")) + str(os.getenv("IOT_DEVICE_NAME")) + str(os.getenv("HIVEMQ_TOPIC_TEMPERATURE")),
+            temp, 
+            qos=0)
 
     # Humidity
     humidity = sensor_data.get("humidity")
     if humidity is not None:
-        hivemq_client.send_payload_hivemq(str(os.getenv("HIVEMQ_TOPIC_HUMIDITY")), humidity, qos=0)
+        hivemq_client.send_payload_hivemq(
+            str(os.getenv("HIVEMQ_TOPIC_SENSOR")) + str(os.getenv("IOT_DEVICE_NAME")) + str(os.getenv("HIVEMQ_TOPIC_HUMIDITY")),
+            humidity,
+            qos=0)
 
     # CO2 (may not exist on all sensors)
     co2 = sensor_data.get("co2")
     if co2 is not None:
-        hivemq_client.send_payload_hivemq(str(os.getenv("HIVEMQ_TOPIC_CO2")), co2, qos=0)
+        hivemq_client.send_payload_hivemq(str(os.getenv("HIVEMQ_TOPIC_SENSOR")) + str(os.getenv("IOT_DEVICE_NAME")) + str(os.getenv("HIVEMQ_TOPIC_CO2")),
+        co2,
+        qos=0)
 
     # AQI (may not exist on all sensors)
     aqi = sensor_data.get("aqi")
     if aqi is not None:
-        hivemq_client.send_payload_hivemq(str(os.getenv("HIVEMQ_TOPIC_AQI")), aqi, qos=0)
+        hivemq_client.send_payload_hivemq(str(os.getenv("HIVEMQ_TOPIC_SENSOR")) + str(os.getenv("IOT_DEVICE_NAME")) + str(os.getenv("HIVEMQ_TOPIC_AQI")),
+        aqi,
+        qos=0)
 
 def process_sensor_data(sensor, hivemq_client, db):
     """
