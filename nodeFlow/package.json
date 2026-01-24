@@ -1,0 +1,12 @@
+{
+    "name": "AtmosphericSensing",
+    "description": "Web UI used to collect IoT data from an MQTT broker to sense home atmosphere",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}

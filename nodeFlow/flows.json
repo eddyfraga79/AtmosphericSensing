@@ -1,0 +1,926 @@
+[
+    {
+        "id": "1f67e315577c15a4",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c36288ed1d3dbba7",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "e1ef71195b625c1c",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "7a2ef4f1d7064d52",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "ce7b647f8eed2bc5",
+        "type": "ui-page",
+        "name": "Charts",
+        "ui": "e1ef71195b625c1c",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "7a2ef4f1d7064d52",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "cb16a4392b814a65",
+        "type": "ui-group",
+        "name": "Charts",
+        "page": "ce7b647f8eed2bc5",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c067635cbe5fe8cf",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "bebcdfd620e84cde8d6b19d8bf243ac2.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "c36288ed1d3dbba7",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "5",
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3c19448fd082f031",
+        "type": "ui-page",
+        "name": "Diagnostics",
+        "ui": "e1ef71195b625c1c",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "7a2ef4f1d7064d52",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "14004e5c31df6a2b",
+        "type": "ui-group",
+        "name": "Payload",
+        "page": "3c19448fd082f031",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ccc382235afd9597",
+        "type": "ui-group",
+        "name": "Devices",
+        "page": "3c19448fd082f031",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "522a69d97492d92d",
+        "type": "ui-group",
+        "name": "Diagnostics",
+        "page": "3c19448fd082f031",
+        "width": "6",
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "fab9460907429b29",
+        "type": "mqtt in",
+        "z": "1f67e315577c15a4",
+        "name": "",
+        "topic": "sensor/#",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c067635cbe5fe8cf",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 380,
+        "wires": [
+            [
+                "e93d676fd987c3e2",
+                "6a1908f6f1f158c4",
+                "d57902396bc0a48d",
+                "7478bf6da455cd51",
+                "bed449f6830c9d60"
+            ]
+        ]
+    },
+    {
+        "id": "d792f029b5129ded",
+        "type": "ui-chart",
+        "z": "1f67e315577c15a4",
+        "group": "cb16a4392b814a65",
+        "name": "",
+        "label": "Temperature",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time (HH:MM:SS)",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "{HH}:{mm}:{ss}",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "°C",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "40",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "2",
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "3",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1130,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b7b58bea8c42248b",
+        "type": "ui-chart",
+        "z": "1f67e315577c15a4",
+        "group": "cb16a4392b814a65",
+        "name": "",
+        "label": "Humidity",
+        "order": 3,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time (HH:MM:SS)",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "{HH}:{mm}:{ss}",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "%RH",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "100",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "2",
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "3",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1140,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e93d676fd987c3e2",
+        "type": "switch",
+        "z": "1f67e315577c15a4",
+        "name": "PassTemperatureData",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "regex",
+                "v": "^sensor\\/[^/]+\\/temperature$",
+                "vt": "str",
+                "case": false
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "1f68303c21eaac8e"
+            ]
+        ]
+    },
+    {
+        "id": "6a1908f6f1f158c4",
+        "type": "switch",
+        "z": "1f67e315577c15a4",
+        "name": "PassHumidityData",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "regex",
+                "v": "^sensor\\/[^/]+\\/humidity$",
+                "vt": "str",
+                "case": false
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 440,
+        "wires": [
+            [
+                "0421b1a707403313"
+            ]
+        ]
+    },
+    {
+        "id": "d57902396bc0a48d",
+        "type": "switch",
+        "z": "1f67e315577c15a4",
+        "name": "PassCO2Data",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "regex",
+                "v": "^sensor\\/[^/]+\\/co2$",
+                "vt": "str",
+                "case": false
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 520,
+        "y": 500,
+        "wires": [
+            [
+                "bc5531969586e49a"
+            ]
+        ]
+    },
+    {
+        "id": "faf72aa8a6ffdf25",
+        "type": "ui-chart",
+        "z": "1f67e315577c15a4",
+        "group": "cb16a4392b814a65",
+        "name": "",
+        "label": "CO2",
+        "order": 4,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time (HH:MM:SS)",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "{HH}:{mm}:{ss}",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "ppm",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "3000",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "2",
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "3",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1150,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf584240acbd9fa3",
+        "type": "ui-button",
+        "z": "1f67e315577c15a4",
+        "group": "cb16a4392b814a65",
+        "name": "Clear Charts",
+        "label": "Clear Charts",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 530,
+        "y": 620,
+        "wires": [
+            [
+                "2df9ef8cbb382094"
+            ]
+        ]
+    },
+    {
+        "id": "2df9ef8cbb382094",
+        "type": "function",
+        "z": "1f67e315577c15a4",
+        "name": "function 1",
+        "func": "// Replace the chart data with an empty dataset\nmsg.payload = [];\nmsg.topic = \"sensor/#\"; // use your chart's topic\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 620,
+        "wires": [
+            [
+                "d792f029b5129ded",
+                "b7b58bea8c42248b",
+                "faf72aa8a6ffdf25",
+                "8b800892aa19651f"
+            ]
+        ]
+    },
+    {
+        "id": "8aa43a4048639645",
+        "type": "mqtt in",
+        "z": "1f67e315577c15a4",
+        "name": "",
+        "topic": "devices/+/status",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "c067635cbe5fe8cf",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "866e7e446f57c646"
+            ]
+        ]
+    },
+    {
+        "id": "866e7e446f57c646",
+        "type": "function",
+        "z": "1f67e315577c15a4",
+        "name": "RefactorSensorStatusData",
+        "func": "// --- CONFIG ---\nconst MAX_ROWS = 4; // number of rows to keep\n\n// --- STARTUP CLEAR ---\nif (msg.startup) {\n    // Clear table in flow context\n    flow.set(\"device_table\", []);\n    // Send empty array to UI Table to clear front-end\n    msg.payload = [];\n    return msg;\n}\n\n// --- NORMAL MQTT PROCESSING ---\nlet payload = msg.payload;\n\n// If payload is JSON, extract status\nif (typeof payload === \"object\") {\n    if (payload.status) payload = payload.status;\n} else {\n    try {\n        let parsed = JSON.parse(payload);\n        if (parsed.status) payload = parsed.status;\n    } catch (e) {\n        // Not JSON, leave as-is\n    }\n}\n\n// Extract device ID from topic, remove colons\nlet topicParts = msg.topic.split(\"/\");\nlet deviceId = topicParts[1] || \"unknown\";\ndeviceId = deviceId.replace(/:/g, \"\").toLowerCase();\n\n// Build status string\nlet icon = (payload === \"online\" || payload === \"alive\") ? \"🟢\" : \"🔴\";\nlet localTime = new Date().toLocaleTimeString('en-US', {\n    hour12: false,\n    hour: \"2-digit\",\n    minute: \"2-digit\",\n    second: \"2-digit\"\n});\nlet statusText = `${icon} ${payload} (${localTime})`;\n\n// --- FIFO LOGIC ---\nlet table = flow.get(\"device_table\") || [];\n\n// Update existing device row or add new\nlet index = table.findIndex(row => row.Device === deviceId);\nif (index !== -1) {\n    table[index].Status = statusText;\n} else {\n    table.unshift({ Device: deviceId, Status: statusText });\n}\n\n// Keep only MAX_ROWS\nif (table.length > MAX_ROWS) table = table.slice(0, MAX_ROWS);\n\n// Save back to flow context\nflow.set(\"device_table\", table);\n\n// Output to UI Table\nmsg.payload = table;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n// Clear the device table on deploy/start\nflow.set(\"device_table\", []);",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 140,
+        "wires": [
+            [
+                "fbe0f090da3c9abc"
+            ]
+        ]
+    },
+    {
+        "id": "7478bf6da455cd51",
+        "type": "switch",
+        "z": "1f67e315577c15a4",
+        "name": "PassAQIData",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "regex",
+                "v": "^sensor\\/[^/]+\\/aqi$",
+                "vt": "str",
+                "case": false
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 520,
+        "y": 560,
+        "wires": [
+            [
+                "f269b638c446c0a7"
+            ]
+        ]
+    },
+    {
+        "id": "8b800892aa19651f",
+        "type": "ui-chart",
+        "z": "1f67e315577c15a4",
+        "group": "cb16a4392b814a65",
+        "name": "",
+        "label": "AQI",
+        "order": 5,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time (HH:MM:SS)",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "{HH}:{mm}:{ss}",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "High=Good, Low=Bad",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "100",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "2",
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "3",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1150,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f68303c21eaac8e",
+        "type": "function",
+        "z": "1f67e315577c15a4",
+        "name": "RefactorTopicTemp",
+        "func": "if (msg.topic) {\n    // Remove \"sensor/\" at the start\n    msg.topic = msg.topic.replace(/^sensor\\//, \"\");\n    \n    // Remove \"/temperature\" at the end\n    msg.topic = msg.topic.replace(/\\/temperature$/, \"\");\n}\n\n// Continue passing the message\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 380,
+        "wires": [
+            [
+                "d792f029b5129ded"
+            ]
+        ]
+    },
+    {
+        "id": "0421b1a707403313",
+        "type": "function",
+        "z": "1f67e315577c15a4",
+        "name": "RefactorTopicHumdity",
+        "func": "if (msg.topic) {\n    // Remove \"sensor/\" at the start\n    msg.topic = msg.topic.replace(/^sensor\\//, \"\");\n    \n    // Remove \"/temperature\" at the end\n    msg.topic = msg.topic.replace(/\\/humidity$/, \"\");\n}\n\n// Continue passing the message\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 440,
+        "wires": [
+            [
+                "b7b58bea8c42248b"
+            ]
+        ]
+    },
+    {
+        "id": "bc5531969586e49a",
+        "type": "function",
+        "z": "1f67e315577c15a4",
+        "name": "RefactorTopicCO2",
+        "func": "if (msg.topic) {\n    // Remove \"sensor/\" at the start\n    msg.topic = msg.topic.replace(/^sensor\\//, \"\");\n    \n    // Remove \"/temperature\" at the end\n    msg.topic = msg.topic.replace(/\\/co2$/, \"\");\n}\n\n// Continue passing the message\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 500,
+        "wires": [
+            [
+                "faf72aa8a6ffdf25"
+            ]
+        ]
+    },
+    {
+        "id": "f269b638c446c0a7",
+        "type": "function",
+        "z": "1f67e315577c15a4",
+        "name": "RefactorTopicAQI",
+        "func": "if (msg.topic) {\n    // Remove \"sensor/\" at the start\n    msg.topic = msg.topic.replace(/^sensor\\//, \"\");\n    \n    // Remove \"/temperature\" at the end\n    msg.topic = msg.topic.replace(/\\/aqi$/, \"\");\n}\n\n// Continue passing the message\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 560,
+        "wires": [
+            [
+                "8b800892aa19651f"
+            ]
+        ]
+    },
+    {
+        "id": "bed449f6830c9d60",
+        "type": "function",
+        "z": "1f67e315577c15a4",
+        "name": "SetPayloadInTable",
+        "func": "// Max number of rows to keep\nconst MAX_ROWS = 8;\n\n// Get the current table data from flow context\nlet table = flow.get(\"fifo_table\") || [];\n\n// Create a new row\nconst newRow = {\n    Time: new Date().toLocaleTimeString(),\n    Topic: msg.topic,\n    Value: msg.payload\n};\n\n// Add the new row at the top\ntable.unshift(newRow);\n\n// Trim the array to exactly MAX_ROWS items\nif (table.length > MAX_ROWS) {\n    table = table.slice(0, MAX_ROWS);\n}\n\n// Save the updated table back to context\nflow.set(\"fifo_table\", table);\n\n// Send it to the UI Table\nmsg.payload = table;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n// Clear the device table on deploy/start\nflow.set(\"fifo_table\", []);",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [
+                "37d7fcbe3c360a04"
+            ]
+        ]
+    },
+    {
+        "id": "37d7fcbe3c360a04",
+        "type": "ui-table",
+        "z": "1f67e315577c15a4",
+        "group": "14004e5c31df6a2b",
+        "name": "DisplayPayloads",
+        "label": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "maxrows": "8",
+        "passthru": false,
+        "autocols": true,
+        "showSearch": false,
+        "deselect": false,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 830,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fbe0f090da3c9abc",
+        "type": "ui-table",
+        "z": "1f67e315577c15a4",
+        "group": "ccc382235afd9597",
+        "name": "DisplayDevices",
+        "label": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "maxrows": "4",
+        "passthru": false,
+        "autocols": true,
+        "showSearch": false,
+        "deselect": false,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 840,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9206a42e622eae2",
+        "type": "ui-button",
+        "z": "1f67e315577c15a4",
+        "group": "522a69d97492d92d",
+        "name": "Clear Diagnostics",
+        "label": "Clear Diagnostics",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 220,
+        "wires": [
+            [
+                "badc17d8db7bdbc8"
+            ]
+        ]
+    },
+    {
+        "id": "badc17d8db7bdbc8",
+        "type": "function",
+        "z": "1f67e315577c15a4",
+        "name": "ClearTableData",
+        "func": "// Clear the stored table data\nflow.set(\"fifo_table\", []);  // or \"device_table\", depending on what you called it\n\n// Send an empty array to clear the table display\nmsg.payload = [];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 220,
+        "wires": [
+            [
+                "fbe0f090da3c9abc",
+                "37d7fcbe3c360a04"
+            ]
+        ]
+    }
+]

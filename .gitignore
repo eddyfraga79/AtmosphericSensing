@@ -18,3 +18,13 @@ venv/
 
 # Ignore database files
 *.db
+
+# Node-RED sensitive and generated files
+nodeFlow/flows_cred.json
+nodeFlow/node_modules/
+nodeFlow/settings.js
+nodeFlow/.config.*
+nodeFlow/.sessions.json
+nodeFlow/*.backup
+nodeFlow/*.tmp
+
