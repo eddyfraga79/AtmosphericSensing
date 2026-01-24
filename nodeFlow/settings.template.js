@@ -13,6 +13,11 @@ module.exports = {
     flowFile: "flows.json",  // your main flow file
 
     /*******************************************************************************
+     * Credential Secret
+     ******************************************************************************/
+    credentialSecret: "Usfot80d+jyWCpHGA+WD9xEWpQfZFuGPOKCwV9tc5LA=",
+
+    /*******************************************************************************
      * Server Settings
      ******************************************************************************/
     uiPort: process.env.PORT || 1880,  // default Node-RED port
