@@ -140,7 +140,11 @@
         "willPayload": "",
         "willMsg": {},
         "userProps": "",
-        "sessionExpiry": ""
+        "sessionExpiry": "",
+        "credentials": {
+            "user": "{{HIVEMQ_USERNAME}}",
+            "password": "{{HIVEMQ_PASSWORD}}"
+        }
     },
     {
         "id": "3c19448fd082f031",
