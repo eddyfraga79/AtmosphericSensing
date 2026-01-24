@@ -5,17 +5,14 @@
  * Safe to commit — does NOT contain any credentials or machine-specific secrets.
  */
 
+require('dotenv').config();
+
 module.exports = {
 
     /*******************************************************************************
      * Flow File
      ******************************************************************************/
     flowFile: "flows.json",  // your main flow file
-
-    /*******************************************************************************
-     * Credential Secret
-     ******************************************************************************/
-    credentialSecret: "Usfot80d+jyWCpHGA+WD9xEWpQfZFuGPOKCwV9tc5LA=",
 
     /*******************************************************************************
      * Server Settings
