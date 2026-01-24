@@ -5,6 +5,10 @@
  * Safe to commit — does NOT contain any credentials or machine-specific secrets.
  */
 
+/**
+* Create a settings.json file, using this file as a template, which will hold Node_RED settings
+*/
+
 require('dotenv').config();
 
 module.exports = {
