@@ -22,7 +22,6 @@ venv/
 # Node-RED sensitive and generated files
 nodeFlow/flows_cred.json
 nodeFlow/node_modules/
-nodeFlow/settings.js
 nodeFlow/package-lock.json
 nodeFlow/.config.*
 nodeFlow/.sessions.json
