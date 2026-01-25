@@ -1,17 +1,18 @@
 # Project Summary
 * This project uses the _Raspberry Pi Zero 2 W_ Single-Board computer (SBC) and the _SCD4x_ sensor.
-* SCD4x sensor data is collected (tempareature, humidity and CO2) via the I2C interface approx. every 5 secs.
-* Data is then sent to an MQTT broker (HIVEMQ) and data can be visualized using _Node-RED_ from _FlowFuse_.
+* SCD4x or BME688 (either one is supported) sensor data is collected (tempareature, humidity and CO2 or AQI) via the I2C interface approx. every 5 secs.
+* Data is then sent to an MQTT broker (HIVEMQ) and data can be visualized using _Node-RED_ which is running on a server VM.
 * Data is also stored in an _SQLite_ database stored on the _Raspberry pi Zero 2 W_.
-* This project is developped using Python with 3rd party packages.
+* IoT device code is developped using Python with various 3rd party packages.
+* Data collection and visualization is developed using Node-RED. 
 
 # References
 * HIVEMQ : https://www.hivemq.com/
     * Created a free account with _HIVEMQ_ for this project. Good enough for low data throughput projects with very little IoT devices.
-* FlowFuse : https://flowfuse.com/
-    * Created a free account with _FlowFuse_ for this project. Connects to the MQTT broker and allows for data visualization.
+* Node-RED : https://nodered.org/
+    * Running on a VM as a Cloud service. Connects to the MQTT broker and allows for data visualization.
     * See image below for reference of Node-RED configurations:
-      <img width="1110" height="515" alt="image" src="https://github.com/user-attachments/assets/22cddbb8-564b-4b6b-89ed-8e8e25bfefe8" />
+      ![alt text](./images/flow.png)
 * Raspberry Pi Zero 2 W : https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/
     * Low powered SBC, equipped with WiFi allowing for networking capabilities and interfacing with various devices trhough GPIOs, I2C and SPI buses 
 * SCD4x sensor : https://sensirion.com/media/documents/48C4B7FB/64C134E7/Sensirion_SCD4x_Datasheet.pdf
@@ -73,3 +74,17 @@ sudo systemctl stop my_project.service
 ```
 sudo systemctl enable my_project.service
 ```
+
+# Prepare Node-RED flow on new system
+* Clone github repo
+* Run npm command inside the _nodeFlow_ folder:
+```
+npm install --save --legacy-peer-deps
+```
+* Run Node-RED flow inside the _nodeFlow_ folder:
+```
+node-red --userDir ~/Projects/AtmosphericSensing/nodeFlow
+```
+* Must manually enter the MQTT credentials in the _MQTT_IN_ node if its the 1st time running flow on system:
+![alt text](./images/mqtt_credentials.png) 
+* Re-deploy the modified flow with your newly entered credentials. The flow should now be able to connect to your MQTT broker.
