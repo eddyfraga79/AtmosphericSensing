@@ -926,41 +926,5 @@
                 "37d7fcbe3c360a04"
             ]
         ]
-    },
-    {
-        "id": "613a8fe92d56d95f",
-        "type": "function",
-        "z": "1f67e315577c15a4",
-        "name": "function 2",
-        "func": "return { payload: process.env.HIVEMQ_USERNAME };",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1040,
-        "y": 220,
-        "wires": [
-            [
-                "47181962df05ee0f"
-            ]
-        ]
-    },
-    {
-        "id": "47181962df05ee0f",
-        "type": "debug",
-        "z": "1f67e315577c15a4",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1260,
-        "y": 220,
-        "wires": []
     }
 ]
